@@ -58,3 +58,17 @@ ax2.set_ylabel("Tamaño del Mercado (USD millones)")
 ax2.set_title("Comparación de Tamaños de Mercado")
 plt.xticks(rotation=45)
 st.pyplot(fig2)
+# Análisis Comparativo
+st.subheader("Análisis Comparativo")
+fig2, ax2 = plt.subplots(figsize=(8, 5))
+colors = sns.color_palette("Set2", len(mercados_df))
+ax2.bar(
+    mercados_df["País"],
+    mercados_df["Tamaño del Mercado (USD millones)"],
+    color=colors
+)
+ax2.set_xlabel("País")
+ax2.set_ylabel("Tamaño del Mercado (USD millones)")
+ax2.set_title("Comparación de Tamaños de Mercado")
+plt.xticks(rotation=45)
+st.pyplot(fig2)
