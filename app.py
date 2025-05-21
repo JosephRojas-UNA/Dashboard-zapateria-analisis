@@ -38,6 +38,20 @@ ax.set_ylabel("Exportaciones (USD millones)")
 ax.set_title(f"Exportaciones de Chocolates en {pais_seleccionado}")
 plt.xticks(rotation=45)
 st.pyplot(fig)
+# Mostrar datos de exportaciones
+st.subheader("Exportaciones de Chocolates")
+exportaciones_filtradas = exportaciones_df[exportaciones_df["País"] == pais_seleccionado]
+fig, ax = plt.subplots()
+ax.bar(
+    exportaciones_filtradas["País"],
+    exportaciones_filtradas["Exportaciones (USD millones)"],
+    color=sns.color_palette("husl", len(exportaciones_filtradas))  # Paleta variada
+)
+ax.set_xlabel("País")
+ax.set_ylabel("Exportaciones (USD millones)")
+ax.set_title(f"Exportaciones de Chocolates en {pais_seleccionado}")
+plt.xticks(rotation=45)
+st.pyplot(fig)
 
 # Mostrar datos de mercados
 st.subheader("Segmentos de Mercado")
